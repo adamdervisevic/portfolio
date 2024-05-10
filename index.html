@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/style.css">
 
 
+
 	</head>
 	<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	
@@ -379,12 +380,12 @@
 
 	<div class="row no-gutters block-9" id="contact">
 		<div class="col-md-6 order-md-last d-flex">
-			<form class="bg-light p-4 p-md-5 contact-form" onsubmit="sendMail(); return false;">
+			<form class="bg-light p-4 p-md-5 contact-form" id="form" onsubmit="sendMail(); return false;">
 				<div class="form-group">
-					<input type="text" class="form-control" id="sendername" placeholder="Your Name" name="name">
+					<input type="text" class="form-control" id="from_name" placeholder="Your Name" name="name">
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" id="to" placeholder="Your Email" name="email">
+					<input type="text" class="form-control" id="from_email" placeholder="Your Email" name="email">
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
@@ -447,30 +448,8 @@
 
 
 <!-- loader -->
+<script src="contact.js"></script>
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-<script>
-	(function () {
-    emailjs.init("GJSo-5qlUkPgkJs-q"); 
-})();
-
-const params = {
-        sendername: document.querySelector("#sendername").value,
-        to: document.querySelector("#to").value,
-        subject: document.querySelector("#subject").value,
-		message: document.querySelector("#message").value,
-    };
-
-	const serviceID = "service_o5z359j";
-    const templateID = "template_uttoda9";
-
-	emailjs.send(serviceID, templateID, params)
-	.then( res => {
-		alert("Email Sent Successfully")
-	})
-	.catch();
-
-</script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery-migrate-3.0.1.min.js"></script>
 <script src="js/popper.min.js"></script>
@@ -487,7 +466,8 @@ const params = {
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
 
-<script src="js/main.js"></script>
 
+<script src="js/main.js"></script>
+<script src="contact.js"></script>
 </body>
 </html>

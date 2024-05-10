@@ -1,7 +1,7 @@
- AOS.init({
- 	duration: 800,
- 	easing: 'slide'
- });
+	AOS.init({
+		duration: 800,
+		easing: 'slide'
+	});
 
 (function($) {
 
@@ -14,7 +14,7 @@
     horizontalScrolling: false,
     hideDistantElements: false,
     scrollProperty: 'scroll'
-  });
+});
 
 
 	var fullHeight = function() {

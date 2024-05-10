@@ -4,6 +4,14 @@
     <title>Adam Dervisevic</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<script type="text/javascript">
+		(function(){
+			emailjs.init({
+				publicKey: "GJSo-5qlUkPgkJs-q",
+			});
+		})();
+	</script>
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
@@ -21,6 +29,8 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+
+
 	</head>
 	<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	
@@ -98,7 +108,7 @@
 				<span class="number" data-number="18">0</span>
 				<span>Project complete</span>
                 </p>
-                <p><a href="#" class="btn btn-primary py-3 px-3">Download CV</a></p>
+                <p><a href="Adam-Dervisevic.pdf" download="Adam-Dervisevic" class="btn btn-primary py-3 px-3">Download CV</a></p>
 			</div>
 			</div>
 		</div>
@@ -144,7 +154,7 @@
 		</div>
 		<div class="row justify-content-center mt-5">
 			<div class="col-md-6 text-center ftco-animate">
-				<p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
+				<p><a href="Adam-Dervisevic.pdf" download="Adam-Dervisevic" class="btn btn-primary py-4 px-5">Download CV</a></p>
 			</div>
 		</div>
 	</div>
@@ -161,7 +171,7 @@
         </div>
 		<div class="row">
 					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
+						<a href="#contact" class="services-1">
 							<span class="icon">
 								<i class="flaticon-ideas"></i>
 							</span>
@@ -171,7 +181,7 @@
 						</a>
 					</div>
 					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
+						<a href="#contact" class="services-1">
 							<span class="icon">
 								<i class="flaticon-flasks"></i>
 							</span>
@@ -181,7 +191,7 @@
 						</a>
 					</div>
 					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
+						<a href="#contact" class="services-1">
 							<span class="icon">
 								<i class="flaticon-analysis"></i>
 								
@@ -317,7 +327,6 @@
 					<div class="col-md-7 ftco-animate text-center">
 						<h2>I'm <span>Available</span> for freelancing</h2>
 						<p style="color: white;">Share your ideas with me, and we can turn them into code.</p>
-						<p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">Hire me</a></p>
 					</div>
 				</div>
 			</div>
@@ -349,7 +358,7 @@
 				<span class="icon-phone2"></span>
 			</div>
 			<h3 class="mb-4">Contact Number</h3>
-			<p>+381616449864</p>
+			<p>+381/61-6449864</p>
 			</div>
 		</div>
 		<div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -374,24 +383,24 @@
 
 	<div class="row no-gutters block-9" id="contact">
 		<div class="col-md-6 order-md-last d-flex">
-		<form action="#" class="bg-light p-4 p-md-5 contact-form">
-			<div class="form-group">
-			<input type="text" class="form-control" placeholder="Your Name">
-			</div>
-			<div class="form-group">
-			<input type="text" class="form-control" placeholder="Your Email">
-			</div>
-			<div class="form-group">
-			<input type="text" class="form-control" placeholder="Subject">
-			</div>
-			<div class="form-group">
-			<textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-			</div>
-			<div class="form-group">
-			<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-			</div>
-		</form>
-		
+			<form class="bg-light p-4 p-md-5 contact-form" onsubmit="sendMail(); return false;">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Your Name" name="name">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Your Email" name="email">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Subject" name="subject">
+				</div>
+				<div class="form-group">
+					<textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+				</div>
+				<div class="form-notification"></div>
+			</form>			
 		</div>
 
 		<div class="col-md-6 d-flex">
@@ -458,6 +467,9 @@
 <script src="js/aos.js"></script>
 <script src="js/jquery.animateNumber.min.js"></script>
 <script src="js/scrollax.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
 
 <script src="js/main.js"></script>
 

@@ -1,6 +1,6 @@
 // JavaScript for EmailJS
 (function() {
-    emailjs.init("GJSo-5qlUkPgkJs-q");  // Replace with your user ID
+    emailjs.init("GJSo-5qlUkPgkJs-q");  
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         var params = {
             from_name: document.getElementById('from_name').value,
-            to_email: document.getElementById('from_email').value,  // This might need to match with your EmailJS parameters
+            from_email: document.getElementById('from_email').value,  // This might need to match with your EmailJS parameters
             subject: document.getElementById('subject').value,
             message: document.getElementById('message').value,
         };

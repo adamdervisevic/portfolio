@@ -1,15 +1,42 @@
-// JavaScript for EmailJS
 (function() {
-    emailjs.init("GJSo-5qlUkPgkJs-q");  
+    emailjs.init("GJSo-5qlUkPgkJs-q");
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('form').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        // Disable the submit button to prevent multiple submissions
+        console.log('Form submitted'); 
+
+        
         var submitButton = document.getElementById('submit-button');
         submitButton.disabled = true;
+
+        // Check if any of the required fields are empty
+        if (!document.getElementById('from_name').value ||
+            !document.getElementById('from_email').value ||
+            !document.getElementById('subject').value ||
+            !document.getElementById('message').value) {
+            document.querySelector('.form-notification').innerHTML = "Please fill out all the fields.!";
+            submitButton.disabled = false; 
+            return; 
+        }
+
+        // Define a list of valid email domains
+        const validDomains = [
+            "@gmail.com", "@yahoo.com", "@hotmail.com", "@outlook.com",
+            "@aol.com", "@icloud.com", "@protonmail.com", "@mail.com",
+            "@yandex.com", "@livemail.com", "@msn.com", "@zoho.com",
+            "@gmx.com", "@fastmail.com"
+        ];
+
+        // Check for proper email extension
+        let emailValue = document.getElementById('from_email').value;
+        if (!validDomains.some(domain => emailValue.endsWith(domain))) {
+            document.querySelector('.form-notification').innerHTML = "You have entered an invalid email!";
+            submitButton.disabled = false; 
+            return;
+        }
 
         var params = {
             from_name: document.getElementById('from_name').value,
@@ -22,12 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
                 document.getElementById('form').reset(); // Reset the form
-                document.getElementById('success-message').style.display = 'block'; // Show the success message
-                submitButton.disabled = false; // Re-enable the submit button
+                document.getElementById('success-message').style.display = 'block'; 
+                submitButton.disabled = false; 
             }, function(error) {
                 console.log('FAILED...', error);
                 alert('Failed to send email: ' + error);
-                submitButton.disabled = false; // Re-enable the submit button
+                submitButton.disabled = false; 
             });
     });
 });

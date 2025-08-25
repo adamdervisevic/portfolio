@@ -5,7 +5,7 @@
 Moj lični portfolio sajt koji predstavlja moja dosadašnja dela, veštine i iskustvo u web developmentu.
 
 ## 🚀 Live demo
-**[http://127.0.0.1:5500/index.html]** 
+**http://127.0.0.1:5500/index.html]](https://adamdervisevic.netlify.app/** 
 
 ## ✨ Funkcionalnosti
 
